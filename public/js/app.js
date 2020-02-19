@@ -1,5 +1,3 @@
-console.log('Hi software engineer! Arun praveen Muniyandi')
-
 const weatherform = document.querySelector('form') //getting "form" from home.hbs file
 const userinput= document.querySelector('input') //getting "input" from home.hbs file
 const msg1= document.querySelector('#msg1')//Accessing "msg1" from home.hbs file
