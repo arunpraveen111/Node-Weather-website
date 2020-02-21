@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "weatherapp": "node source/app.js"
+    "start": "node source/app.js"
   },
   "author": "Arun praveen",
   "license": "ISC",
