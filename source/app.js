@@ -4,7 +4,8 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
-const app = express()//creating a new variable called "app" to store our express application. We didn't add any arguments,instead we configure our server by using various methods provided on the application itself.
+const app = express() //creating a new variable called "app" to store our express application. We didn't add any arguments,instead we configure our server by using various methods provided on the application itself.
+const port = process.env.PORT||3000 //only access the heroku, if we tries to run locally on our machine, it fails, so we use "|| 3000"(our local port)
 
 //Defining paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -84,6 +85,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is ON for port:3000 !')
+app.listen(port,()=>{
+    console.log('Server is ON for port!' + port)
 })

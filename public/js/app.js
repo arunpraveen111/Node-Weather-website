@@ -1,3 +1,5 @@
+//working on the server, remenber we displayed "arun praveen muniyandi on the browser console tab"
+
 const weatherform = document.querySelector('form') //getting "form" from home.hbs file
 const userinput= document.querySelector('input') //getting "input" from home.hbs file
 const msg1= document.querySelector('#msg1')//Accessing "msg1" from home.hbs file
@@ -10,7 +12,7 @@ weatherform.addEventListener('submit',(browserevent)=>{ //submit is the predefin
     msg2.textContent =''
     browserevent.preventDefault()
 
-    fetch('http://localhost:3000/weather?address='+location).then((response)=>{
+    fetch('/weather?address='+location).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 msg1.textContent= data.error
