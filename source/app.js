@@ -23,7 +23,7 @@ app.use(express.static(publicDirectoryPath))
 // //below coding is to tell our express application what to do
 
 app.get('/',(req,res)=>{
-    res.render('Home',{ //no need of mentioning the extension "index.hbs"
+    res.render('Home',{ //no need of mentioning the extension "Home.hbs"
         title:'Weather Application',
         version:'Version: 1.1.0',
         Author: ' @ Arun.lnc'
