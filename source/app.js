@@ -1,20 +1,21 @@
-const path = require('path') //core module of node.js for which we don't need to install it.
-const express = require('express')
-const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
-
-const app = express() //creating a new variable called "app" to store our express application. We didn't add any arguments,instead we configure our server by using various methods provided on the application itself.
-const port = process.env.PORT||3000 //only access the heroku, if we tries to run locally on our machine, it fails, so we use "|| 3000"(our local port)
+const path = require('path')//core module of node.js which we don't need to install it.
 
 //Defining paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
 const viewspath = path.join(__dirname,'../template/views')
 const partialpath = path.join(__dirname,'../template/partial')
 
+const express = require('express')
+const app = express() //creating a new variable called "app" to store our express application. We didn't add any arguments,instead we configure our server by using various methods provided on the application itself.
+
+const port = process.env.PORT||3000
+
 //setting up handlebar engine and views location 
 app.set('view engine','hbs')//.set allows us to set a value for a given express setting. //to set up handlebar. 
 app.set('views',viewspath)
+const hbs = require('hbs')
 hbs.registerPartials(partialpath)
   
 //setting up static directory
